@@ -2,18 +2,19 @@
 
 import os, sys, time
 
-def test():  
-    print ("AutoRes is starting")
+def test(): 
+    status="on" 
+    print ("Auto restart mode")
     executable = sys.executable
     args = sys.argv[:]
     args.insert(0, sys.executable)
 
     time.sleep(30)
-    print ("Respawning")
-    num1 = 1.5
-    num2 = 6.3
-    sum = float(num1) + float(num2)
-    print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
+    print ("check")
+    if status =="on":
+        print ("yes")
+    else:
+       print("no")
     os.execvp(executable, args)
 
 if __name__ == "__main__":  
